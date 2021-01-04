@@ -7,6 +7,7 @@ Servant Catalouge
 GitHub link: https://brianlimmj.github.io/IDS10208584_Brian_Assn2_Website/
 Wireframe link: https://xd.adobe.com/view/a1cf2baf-8c37-43e0-9703-59920d2c5b45-f49c/
 
+
 To begin, this website was made for new and existing players of the poular mobile rpg game known as Fate /Grand Order. This will help provide character information for players who want a quick search of characters when playing the game. It also displays the character's image when they have leveled them to max level.
 
 The website allows players to be fascinated by not only the background image but also the auto complete feature for when players decide to input names. Another feature that is implemented is the option to either continue adding on characters upon search or they can choose to remove the search results.
