@@ -29,6 +29,9 @@ Source: https://getbootstrap.com/docs/4.0/components/navbar/
 Bootstrap cards: Used in about.html and styled in about-style.css
 Source: https://getbootstrap.com/docs/4.0/components/card/
 
+Bootstrap: used in all html
+Source: https://getbootstrap.com/
+
 Flipcard: Used in search.html and styled in search-style.css
 Source: https://www.w3schools.com/howto/howto_css_flip_card.asp
 
