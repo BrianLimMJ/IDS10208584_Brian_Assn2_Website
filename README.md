@@ -57,6 +57,12 @@ Important information
 
 3. Without inputting, website shows all character information
 
+4. Changed repository because there was some error in the 1st one and could not be fixed, thus the lack of commit on the new one 
+here's the old repository link if you want to check the commitments: https://brianlimmj.github.io/ID_S10208584_Brian_Assn2_Website/
+
+5. New repository link: https://brianlimmj.github.io/IDS10208584_Brian_Assn2_Website/
+
+
 Sources/References  
 -------------------------------------------------------------------------------------------------------------------------------- 
 Api Source:
