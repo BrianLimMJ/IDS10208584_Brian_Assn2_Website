@@ -1,0 +1,77 @@
+/* This is the body image such that it will adjust to how much the page stretches */
+body{
+    background-image: url("Images/lb.png");
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+nav-link{
+    font-size: 16px;
+    
+}
+.navbar-brand{
+    margin: auto;
+    padding: 3px;
+}
+.navbar-text{
+    font-size: 18px;
+}
+
+
+.text-container{
+    background-color: #FFFFFF;
+    text-align: center;
+    opacity: 90%;
+    position: relative;
+    width: 20%;
+    margin:auto;
+    margin-top: 60px;
+}
+
+/* The container that holds all the content */
+.card{
+    margin: auto;
+    margin-top: 8px;
+    text-align: center;
+}
+/* Footer*/
+footer{
+    border-style: outset;
+    border-color: #FFFFFF;
+    background-color: #F5F5F5;
+    margin-top: 263px;
+}
+
+/* Footer texts */
+footer .footer-text{
+    font-size: 14px;
+    color: #000000;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    
+}   
+
+/* for mobile version 600px, it changes the items inside to fit an iphone */
+@media only screen and (max-width: 600px) {
+    .navbar-nav{
+        text-align: center;
+        margin: auto;
+    }
+    .navbar-brand{
+        padding: 0px;
+        margin: 0%;
+    }
+    .text-container{
+        width: 50%;
+    }
+    footer{
+        margin-top: 128px;
+    }
+}

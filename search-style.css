@@ -1,0 +1,165 @@
+/* This is the body image such that it will adjust to how much the page stretches */
+body{
+    background-image: url("Images/lb.png");
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); 
+
+.nav-link{
+    font-size: 16px;
+    
+}
+.navbar-brand{
+    margin: auto;
+    padding: 3px;
+}
+.navbar-text{
+    font-size: 18px;
+}
+
+
+
+/* The input buttons */
+.input{
+    background-color: #FFFFFF;
+    text-align: center;
+    position: relative;
+    width: 20%;
+    height: 15%;
+    margin:auto;
+    margin-top: 10px;
+}
+/* The auto complete css */
+* {
+    box-sizing: border-box;
+  }
+  
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+  
+  
+
+/* The row container that contains everything */
+.row{
+    position: relative;
+    opacity: 85%;
+    margin-top: 50px;
+}
+
+/* The container that holds the contents */
+#sContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    flex: 1,20%;
+    width: 80%;
+}
+
+/* The flip card css */
+.card-shell{ 
+    background-color: transparent;
+    height: 330px;
+    width: 250px;
+    perspective: 1000px;
+    
+}
+
+.inside-cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;; 
+}
+.card-shell:hover .inside-cards {
+    transform: rotateY(180deg);
+  }
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    
+}
+
+.card-front{
+    margin: auto;
+    
+}
+.card-back{
+background-color: #6495ED;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  
+}
+.image{
+    height: 300px;
+    width: 250px;
+    
+}
+
+/* Flip card css ends here */
+
+
+/* Footer*/
+footer{
+    border-style: outset;
+    border-color: #FFFFFF;
+    background-color: #F5F5F5;
+    margin-top: 543px;
+}
+/* Footer texts */
+footer .footer-text{
+    font-size: 14px;
+    color: #000000;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    
+}
+
+/* for mobile version 600px, it changes the items inside to fit an iphone */
+@media only screen and (max-width: 600px) {
+    .navbar-nav{
+        text-align: center;
+        margin: auto;
+    }
+    .navbar-brand{
+        padding: 0px;
+        margin: 0%;
+    }
+    .input{
+        width: 35%;
+    }
+}
