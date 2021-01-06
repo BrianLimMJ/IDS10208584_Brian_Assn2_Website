@@ -67,7 +67,7 @@ document.getElementById("btn").addEventListener("click", function getServant(){
         var sAtkMax =NewServantList[i]['atkMax']; 
         var sHPMax =NewServantList[i]['hpMax'];
         
-        
+      
         let Card = document.createElement('card-container');
         Card.innerHTML = "<div class = 'card-shell'><div class = 'inside-cards'>\
         <div class = 'card-front'><img src = '"+sAscenion+"' class = 'image'></div>\
