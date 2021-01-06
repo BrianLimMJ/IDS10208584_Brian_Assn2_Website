@@ -53,7 +53,7 @@ Important information
 --------------------------------------------------------------------------------------------------------------------------------
 1. Images takes a while to load as code searches for certain data
 
-2. Stated above, website will crash as it takes a while to load images
+2. Stated above, website sometimes crashes but i did my best to prevent it from crashing any further
 
 3. Without inputting, website shows all character information
 
