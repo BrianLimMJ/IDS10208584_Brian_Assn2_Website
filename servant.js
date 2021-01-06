@@ -1,24 +1,24 @@
 let url = 'https://api.atlasacademy.io/export/NA/nice_servant.json';
-sList = [];
-
+NameList = [];
+NewServantList = [];
 
 //This reads all everything from the url and makes it such that i can access it
 fetch (url)
     .then(res => res.json())
     .then(data => {
         ServantList = data;
-        console.log(ServantList);   
         LoopList();
+        
     });
     
     function LoopList(){
         for (i = 0;i<ServantList.length;i++)
         {
-            sList.push(ServantList[i]['name']);
-            
+          NameList.push(ServantList[i]['name']);
         }
     }
-    autocomplete(document.getElementById("name"), sList);
+    //This activates the autocomplete function
+    autocomplete(document.getElementById("name"), NameList);
 
 // This is when the user clicks into the box and it will focus on the text box inside which
 // will focus and blur upon entering/leaving
@@ -29,7 +29,7 @@ fetch (url)
     $(this).css("background-color", "white");
   });
 
-
+// create new list inside the if else, put all things inside with matching name into new list and pull data from list 
 
 // This will get users input and display out all characters details based on input
 document.getElementById("btn").addEventListener("click", function getServant(){
@@ -39,56 +39,60 @@ document.getElementById("btn").addEventListener("click", function getServant(){
         fetch (url)
         .then(res => res.json())
         .then(data = ServantList[i]['name'])
-        if (data == searchName)
-        {      
-            break;
-        } 
 
-        var sGender =ServantList[i]['gender']; 
-        var sClass =ServantList[i]['className'];
-        var sRarity =ServantList[i]['rarity']; 
-        var sNP =ServantList[i]['noblePhantasms'][0]['name'];  
-        var sAtkMax =ServantList[i]['atkMax']; 
-        var sHPMax =ServantList[i]['hpMax'];
-        var sAscenion = ServantList[i]['extraAssets']['charaGraph']['ascension'][4];  
-        setTimeout(checking(data,searchName),50);
-    }
-    
-
-    //This function helps check and match the user's input and display output
-    function checking(data,searchName)
-    {
+        //RegExp helps checks the user inputs and matches what the user has inputted with the data
+        //E.g User inputs Gil, regexp matches all character names that contain 'Gil' inside
         var sName = data; 
         var patt = new RegExp(searchName,"i");
         if (patt.test(sName))
         {
-            setTimeout(makeCard(sAscenion,sName,sClass,sGender,sRarity,sNP,sAtkMax,sHPMax),50);
-            function makeCard()
-            {
-                let Card = document.createElement('card-container');
-                Card.innerHTML = "<div class = 'card-shell'><div class = 'inside-cards'>\
-                <div class = 'card-front'><img src = '"+sAscenion+"' class = 'image'></div>\
-                <div class = 'card-back'><h4>"+sName+"</h4>\
-                <p>"+'Class: ' +sClass+"</p>\
-                <p>"+'Gender: ' +sGender+"</p>\
-                <p>"+'Rarity: ' +sRarity+"</p>\
-                <p>"+'Noble Phantasm: '+'<br>'+ sNP+"</p>\
-                <p>"+'Max Atk: ' +sAtkMax+"</p>\
-                <p>"+'Max HP: ' +sHPMax+"</p></div>\
-                </div></div>";
-                document.getElementById('sContainer').appendChild(Card);
-            }
-            
+          NewServantList.push(ServantList[i]);
+          
         }
-    }  
+        
+    }
+    setTimeout(makeCard(),5000);
+    //This function helps make the card to display for users
+    function makeCard()
+    {
+      for (let i = 0;i<NewServantList.length;i++)
+      {
+        console.log(NewServantList[i]);
+        var sAscenion = NewServantList[i]['extraAssets']['charaGraph']['ascension'][4];  
+        var sName = NewServantList[i]['name']
+        var sGender =NewServantList[i]['gender']; 
+        var sClass =NewServantList[i]['className'];
+        var sRarity =NewServantList[i]['rarity']; 
+        var sNP =NewServantList[i]['noblePhantasms'][0]['name'];  
+        var sAtkMax =NewServantList[i]['atkMax']; 
+        var sHPMax =NewServantList[i]['hpMax'];
+        
+        
+        let Card = document.createElement('card-container');
+        Card.innerHTML = "<div class = 'card-shell'><div class = 'inside-cards'>\
+        <div class = 'card-front'><img src = '"+sAscenion+"' class = 'image'></div>\
+        <div class = 'card-back'><h4>"+sName+"</h4>\
+        <p>"+'Class: ' +sClass+"</p>\
+        <p>"+'Gender: ' +sGender+"</p>\
+        <p>"+'Rarity: ' +sRarity+"</p>\
+        <p>"+'Noble Phantasm: '+'<br>'+ sNP+"</p>\
+        <p>"+'Max Atk: ' +sAtkMax+"</p>\
+        <p>"+'Max HP: ' +sHPMax+"</p></div>\
+        </div></div>";
+        document.getElementById('sContainer').appendChild(Card);
+        
+      }
+    } 
 });
-//This is the clear function if the user wishes to find another charcter
+//This is the clear function that removes all childnode and resets the list to an empty list
+//if the user wishes to find another charcter
 document.getElementById("remove").addEventListener("click", function clearAll(){
     let ServantElements = document.getElementById('sContainer');
     document.getElementById('name').value = '';
     while (ServantElements.hasChildNodes())
     {
-        ServantElements.removeChild(ServantElements.firstChild);
+      NewServantList = [];
+      ServantElements.removeChild(ServantElements.firstChild);
     }
 });
 
